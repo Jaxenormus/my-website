@@ -1,5 +1,4 @@
 import Image, { StaticImageData } from 'next/image'
-import Head from 'next/head'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { TwitterIcon, GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
@@ -17,8 +16,15 @@ const Contact: React.FC = () => {
     <form
       id="contact"
       action="https://submit-form.com/SQvrw9ai"
+      data-botpoison-public-key={process.env.NEXT_PUBLIC_BOTPOISON_PUBLIC_KEY}
       className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
     >
+      <input type="hidden" name="_append" value="false" />
+      <input
+        type="hidden"
+        name="_redirect"
+        value={`${process.env.NEXT_PUBLIC_SITE_URL}/thanks`}
+      />
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Lets get in contact</span>

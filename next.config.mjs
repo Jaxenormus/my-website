@@ -9,6 +9,9 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  images: {
+    domains: ["api.animality.xyz"]
+  }
 }
 
 const withMDX = nextMDX({
