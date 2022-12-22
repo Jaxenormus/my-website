@@ -1,0 +1,28 @@
+import ProjectLayout from '@/components/ProjectLayout'
+import logoEscrow from '@/images/logos/escrow.png'
+
+export const meta = {
+  title: 'An automated crypto middleman bot for discord',
+  description:
+    'Escrow is an automated crypto and Roblox item middleman bot for discord. It is designed to automate the process of middleman transactions, allowing users to complete transactions without the need for a human middleman but with the same level of security and reliability as a human middleman.',
+  image: logoEscrow,
+  feat_position: 1,
+  links: [
+    {
+      title: 'Escrow Discord Server',
+      url: 'https://discord.gg/draco',
+    },
+  ],
+}
+
+export default (props) => <ProjectLayout meta={meta} {...props} />
+
+Escrow is a robust and reliable bot that automates the process of middleman transactions for crypto and Roblox items on Discord. It is designed to provide users with a high level of security and reliability, ensuring that transactions are completed smoothly and without any issues.
+
+One of the vital features of Escrow is its ability to automatically solve two-factor authentication prompts, which is one of the many limitations of the Roblox API. This feature allows users to complete transactions without any disruptions or delays.
+
+Escrow was developed using Sapphire's typescript library, and its main DB is Redis. It utilizes discord slash commands for everything and heavily uses buttons and menu interactions.
+
+Escrow includes advanced measures that check all incoming trades and crypto transactions to ensure the security and reliability of transactions. These measures verify that the transaction is correct and sent to and from the proper account, confirm that the amount is what both parties agreed to, and various others. These checks help to prevent fraud and scams, giving users confidence that their assets are protected when completing transactions with Escrow.
+
+To help users track their performance and progress, Escrow also includes leaderboard and statistics commands that show users how they are doing compared to other users. Users can use these tools to build reputation and credibility and make informed decisions about future trades.
