@@ -1,4 +1,4 @@
-import { ArticleLayout } from '@/components/ArticleLayout'
+import ProjectLayout from '@/components/ProjectLayout'
 import Image from 'next/image'
 import logoTwilid from '@/images/logos/twilid.png'
 import twilidLanding from './twilid-landing.png'
@@ -6,12 +6,11 @@ import twilidSubscriberView from './twilid-subscriber-view.png'
 import twilidSubscriberManagement from './twilid-subscriber-management.png'
 
 export const meta = {
-  title: 'Twilid - Helping Build Better Calendars',
+  title: 'A calendar app helping business improve retention',
   description:
-    'Twilid is an app designed specifically for business owners with audiences. It helps them keep their members informed and engaged with their events through a feature-packed calendar, providing them with a direct communication channel to relay important events and information.',
+    'Twilid is an calendar app designed specifically for business owners with audiences. It helps them keep their members engaged with their events through a feature-packed calendar, providing them with a direct communication channel to relay important events and information.',
   feat_position: 1,
   image: logoTwilid,
-  tags: ['side project', 'app', 'website', 'blitzjs', 'tailwindcss'],
   links: [
     {
       title: 'Website',
@@ -24,7 +23,7 @@ export const meta = {
   ],
 }
 
-export default (props) => <ArticleLayout meta={meta} {...props} />
+export default (props) => <ProjectLayout meta={meta} {...props} />
 
 > Twilid is currently in beta and is not avaliable for public use but you can view the marketing site here: [twilid.com](https://twilid.com) and an example calendar here: [twilid.com/example](https://beta.twilid.com/share/xtdxrfzjtnxdokfb) (most of the example events are in June 2022)
 

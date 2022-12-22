@@ -1,17 +1,16 @@
-import { ArticleLayout } from '@/components/ArticleLayout'
+import ProjectLayout from '@/components/ProjectLayout'
 import Image from 'next/image'
 import logoBarnabus from '@/images/logos/barnabus.png'
 
 export const meta = {
-  title: 'Barnabus - Multi Purpose Discord Bot',
+  title: 'A multi purpose discord bot',
   description:
     'Barnabus was a multi-purpose Discord bot with advanced moderation tools, games, and music streaming capabilities, as well as a user-friendly dashboard. Over 100 community owners with thousands of members added Barnabus.',
   image: logoBarnabus,
   feat_position: 3,
-  tags: ['side project', 'bot', 'discord', 'typescript', 'mongodb'],
 }
 
-export default (props) => <ArticleLayout meta={meta} {...props} />
+export default (props) => <ProjectLayout meta={meta} {...props} />
 
 > The Barnabus project was sunset in 2020. The code will be made available on GitHub _soon_.
 

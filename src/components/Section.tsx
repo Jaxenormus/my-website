@@ -1,5 +1,4 @@
-import { useId } from 'react'
-import { FC, ReactElement } from 'react'
+import { FC, ReactElement, useId } from 'react'
 
 type SectionProps = {
   title: string
@@ -10,7 +9,7 @@ export const Section: FC<SectionProps> = ({
   title,
   children,
 }): ReactElement => {
-  let id = useId()
+  const id = useId()
   return (
     <section
       aria-labelledby={id}

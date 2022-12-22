@@ -298,7 +298,7 @@ module.exports = {
             paddingRight: theme('spacing.2'),
           },
         },
-      }
+      },
     }),
   },
 }

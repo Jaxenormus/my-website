@@ -1,16 +1,15 @@
-import Script from 'next/script'
-import { useEffect, useRef } from 'react'
-
-import { Footer } from '@/components/Footer'
-
-import { Header } from '@/components/Header'
-import { DefaultSeo } from 'next-seo'
-
 import '@/styles/tailwind.css'
 import 'focus-visible'
 
+import Script from 'next/script'
+import { DefaultSeo } from 'next-seo'
+import { useEffect, useRef } from 'react'
+
+import Footer from '@/components/Footer'
+import { Header } from '@/components/Header'
+
 function usePrevious(value: any) {
-  let ref = useRef()
+  const ref = useRef()
 
   useEffect(() => {
     ref.current = value
@@ -20,8 +19,7 @@ function usePrevious(value: any) {
 }
 
 export default function App({ Component, pageProps, router }: any) {
-  let previousPathname = usePrevious(router.pathname)
-
+  const previousPathname = usePrevious(router.pathname)
   return (
     <>
       <Script src="https://unpkg.com/@botpoison/browser" async />

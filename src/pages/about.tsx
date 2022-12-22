@@ -1,13 +1,27 @@
+import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
-import clsx from 'clsx'
+import { NextSeo } from 'next-seo'
+import { ReactElement, SVGProps } from 'react'
 
 import { Container } from '@/components/Container'
-import { TwitterIcon, GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
-import portraitImage from '@/images/portrait.gif'
-import { NextSeo } from 'next-seo'
+import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@/components/Icons'
+import portraitImage from '@/images/portrait.jpg'
 
-function SocialLink({ className, href, children, icon: Icon }: any) {
+type SocialLinkProps = {
+  className?: string
+  href: string
+  children: React.ReactNode
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  icon: (props: any) => ReactElement
+}
+
+const SocialLink: React.FC<SocialLinkProps> = ({
+  className,
+  href,
+  children,
+  icon: Icon,
+}) => {
   return (
     <li className={clsx(className, 'flex')}>
       <Link
@@ -22,7 +36,7 @@ function SocialLink({ className, href, children, icon: Icon }: any) {
   )
 }
 
-function MailIcon(props: any) {
+const MailIcon: React.FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
@@ -33,7 +47,7 @@ function MailIcon(props: any) {
   )
 }
 
-export default function About() {
+const AboutPage: React.FC = () => {
   return (
     <>
       <NextSeo title="About Me" />
@@ -52,16 +66,30 @@ export default function About() {
 
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I&apos;m Caleb aka Jax and I love to push deploys on fridays.
+              I&apos;m Caleb Delbridge and I like to build things.
             </h1>
 
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-              <p>Coming soon.</p>
+              <p>
+                {
+                  "I've loved making things and figuring out how things work for as long as I can remember, whether by smashing my toys together, melting crayons in heaters, or watching How It's Made at 7 in the morning. This love for tinkering and problem-solving eventually led me to pursue programming, and I've been programming for four years and counting."
+                }
+              </p>
+              <p>
+                {
+                  'In addition to my love for building and creating, I am also a daredevil. My dream is to go skydiving and experience the thrill of freefalling through the air.'
+                }
+              </p>
+              <p>
+                {
+                  'I am also the founder of Sinuio, an agency that helps business owners automate their businesses and streamline their operations. With my programming background and passion for building and optimizing systems, I have been able to use my skills to help others succeed in their businesses. Overall, I am always looking for new challenges and opportunities to use my skills and talents to create and positively impact the world.'
+                }
+              </p>
             </div>
           </div>
 
           <div className="lg:pl-20">
-            <ul role="list">
+            <ul>
               <SocialLink
                 href="https://twitter.com/Jaxenormus"
                 icon={TwitterIcon}
@@ -96,3 +124,5 @@ export default function About() {
     </>
   )
 }
+
+export default AboutPage

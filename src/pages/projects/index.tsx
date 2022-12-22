@@ -1,11 +1,12 @@
-import { SimpleLayout } from '@/components/SimpleLayout'
-
-import { getAllProjects } from '@/lib/getProjects'
-
-import ArticleCard from '@/components/ArticleCard'
 import { NextSeo } from 'next-seo'
 
-export default function ArticlesIndex({ articles }: any) {
+import ProjectCard from '@/components/ProjectCard'
+import { SimpleLayout } from '@/components/SimpleLayout'
+import { getAllProjects } from '@/lib/getProjects'
+
+type ArticlesPageProps = { articles: any }
+
+const ArticlesPage: React.FC<ArticlesPageProps> = ({ articles }) => {
   return (
     <>
       <NextSeo
@@ -19,7 +20,7 @@ export default function ArticlesIndex({ articles }: any) {
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
             {articles.map((article: any) => (
-              <ArticleCard key={article.slug} article={article} />
+              <ProjectCard key={article.slug} article={article} />
             ))}
           </div>
         </div>
@@ -28,10 +29,13 @@ export default function ArticlesIndex({ articles }: any) {
   )
 }
 
+export default ArticlesPage
+
 export async function getStaticProps() {
   return {
     props: {
       articles: (await getAllProjects()).map(
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         ({ component, ...meta }: any) => meta
       ),
     },

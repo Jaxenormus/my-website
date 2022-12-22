@@ -1,4 +1,5 @@
 import { FC, ReactElement } from 'react'
+
 import { Container } from '@/components/Container'
 
 type SimpleLayoutProps = {
@@ -10,7 +11,6 @@ type SimpleLayoutProps = {
 export const SimpleLayout: FC<SimpleLayoutProps> = ({
   title,
   intro,
-
   children,
 }): ReactElement => (
   <Container className="mt-16 sm:mt-32">

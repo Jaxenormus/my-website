@@ -1,24 +1,19 @@
 import Image, { StaticImageData } from 'next/image'
-import { Button } from '@/components/Button'
+
+import Button from '@/components/Button'
 import { Container } from '@/components/Container'
-import { TwitterIcon, GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
+import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@/components/Icons'
+import ProjectCard from '@/components/ProjectCard'
+import SocialLink from '@/components/SocialLink'
+import BriefcaseIcon from '@/icons/BriefcaseIcon'
+import MailIcon from '@/icons/MailIcon'
 import logoPlanetaria from '@/images/logos/open-shuttle.svg'
 import logoSyncore from '@/images/logos/syncore.png'
 import { getFeaturedProjects } from '@/lib/getProjects'
-import MailIcon from '@/icons/MailIcon'
-import BriefcaseIcon from '@/icons/BriefcaseIcon'
-import ArrowDownIcon from '@/icons/ArrowDownIcon'
-import ArticleCard from '@/components/ArticleCard'
-import SocialLink from '@/components/SocialLink'
 
 const Contact: React.FC = () => {
   return (
-    <form
-      id="contact"
-      action="https://submit-form.com/SQvrw9ai"
-      data-botpoison-public-key={process.env.NEXT_PUBLIC_BOTPOISON_PUBLIC_KEY}
-      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
-    >
+    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <input type="hidden" name="_append" value="false" />
       <input
         type="hidden"
@@ -27,34 +22,82 @@ const Contact: React.FC = () => {
       />
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Lets get in contact</span>
+        <span className="ml-3">Ready to start a project?</span>
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Have a question, proposal, or just want to say hi? Send me a message and
-        I&apos;ll get back to you. Promise!
+        {
+          "Interested in working together? We should queue up a time to chat. I'll buy the coffee."
+        }
       </p>
       <div className="mt-6 flex flex-col gap-4">
-        <input
-          type="email"
-          name="email"
-          placeholder="Email address"
-          aria-label="Email address"
-          required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-        />
-        <textarea
-          placeholder="Message"
-          aria-label="Message"
-          name="message"
-          required
-          rows={4}
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-        />
-        <Button type="submit" className="flex-none">
-          Send
+        <Button href="/contact" className="flex-none">
+          Contact Me
         </Button>
       </div>
-    </form>
+    </div>
+  )
+}
+
+const Information: React.FC = () => {
+  return (
+    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+          className="h-6 w-6 flex-none"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"
+            className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
+          />
+        </svg>
+        <span className="ml-3">My tech stack</span>
+      </h2>
+      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+        Im always looking to improve my tech stack but here is my tried and true
+        stack that I use for most projects:
+      </p>
+      <ul className="mt-6 grid grid-cols-2 gap-2">
+        {[
+          'Typescript',
+          'Next.js',
+          'Svelte',
+          'Tailwind CSS',
+          'Prisma',
+          'PostgreSQL',
+        ].map((technology) => (
+          <li
+            key={technology}
+            className="flex items-center text-sm text-zinc-600 dark:text-zinc-400"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              className="h-4 w-4 flex-none"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
+              />
+            </svg>
+            <span className="ml-3">{technology}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
@@ -66,8 +109,8 @@ type Role = {
   end: string | { label: string; dateTime: number }
 }
 
-const Resume: React.FC = () => {
-  let resume: Role[] = [
+const Experience: React.FC = () => {
+  const resume: Role[] = [
     {
       company: 'Sinuio',
       title: 'Founder',
@@ -88,16 +131,11 @@ const Resume: React.FC = () => {
   ]
 
   return (
-    <div
-      id="work"
-      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
-    >
+    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
-
-        <span className="ml-3">Work</span>
+        <span className="ml-3">Experience</span>
       </h2>
-
       <ol className="mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
@@ -110,12 +148,12 @@ const Resume: React.FC = () => {
                 {role.company}
               </dd>
               <dt className="sr-only">Role</dt>
-              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
+              <dd className="text-xs leading-tight text-zinc-500 dark:text-zinc-400">
                 {role.title}
               </dd>
               <dt className="sr-only">Date</dt>
               <dd
-                className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
+                className="ml-auto text-xs leading-tight text-zinc-400 dark:text-zinc-500"
                 aria-label={`${
                   typeof role.start !== 'string' ? role.start.label : role.start
                 } until ${
@@ -148,25 +186,27 @@ const Resume: React.FC = () => {
           </li>
         ))}
       </ol>
-      <Button
+      {/* <Button
         onClick={() => alert('Coming Soon')}
         variant="secondary"
         className="group mt-6 w-full"
       >
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button>
+      </Button> */}
     </div>
   )
 }
 
-export default function Home({ articles }: any) {
+type HomePageProps = { articles: any }
+
+const HomePage: React.FC<HomePageProps> = ({ articles }) => {
   return (
     <>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Hello there 👋 nice to meet you.
+            hello there 👋 nice to meet you.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             I&apos;m Caleb aka Jax, an indie software developer based in the US.
@@ -175,14 +215,14 @@ export default function Home({ articles }: any) {
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://twitter.com/Jaxenormus"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
-            />
-            <SocialLink
               href="https://github.com/Jaxenormus"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
+            />
+            <SocialLink
+              href="https://twitter.com/Jaxenormus"
+              aria-label="Follow on Twitter"
+              icon={TwitterIcon}
             />
             <SocialLink
               href="https://linkedin.com/in/caleb-delbridge-65b5b624a/"
@@ -197,21 +237,22 @@ export default function Home({ articles }: any) {
           <div className="space-y-10">
             <span className="font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
               <h1 className="hidden text-3xl sm:block">
-                Take a look at what I&apos;ve been up to:
+                Take a look at what i’ve built:
               </h1>
               <h1 className="text-2xl text-[28px] sm:hidden">
                 Highlighted Projects:
               </h1>
             </span>
-            <div className="flex flex-col gap-16">
+            <div className="flex flex-col gap-12">
               {articles.map((article: any) => (
-                <ArticleCard key={article.slug} article={article} />
+                <ProjectCard key={article.slug} article={article} />
               ))}
             </div>
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
+            <Information />
+            <Experience />
             <Contact />
-            <Resume />
           </div>
         </div>
       </Container>
@@ -219,10 +260,13 @@ export default function Home({ articles }: any) {
   )
 }
 
+export default HomePage
+
 export async function getStaticProps() {
   return {
     props: {
       articles: (await getFeaturedProjects()).map(
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         ({ component, ...meta }: any) => meta
       ),
     },

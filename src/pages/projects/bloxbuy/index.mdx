@@ -1,19 +1,18 @@
-import { ArticleLayout } from '@/components/ArticleLayout'
+import ProjectLayout from '@/components/ProjectLayout'
 import Image from 'next/image'
 import logoBloxbuy from '@/images/logos/bloxbuy.png'
 import bloxbuyHomeScreen from './bloxbuy-home-screen.jpg'
 import bloxbuyDashboardScreen from './bloxbuy-dashboard-screen.jpg'
 
 export const meta = {
-  title: 'Bloxbuy - Automated Robux Marketplace',
+  title: 'An automated robux marketplace',
   description:
     'Bloxbuy was a Roblox marketplace that was developed to specialize in the sale of Robux. It was developed to provide users with a secure and convenient platform for buying and selling this virtual currency with various payment and delivery options.',
   image: logoBloxbuy,
   feat_position: 2,
-  tags: ['commision', 'website', 'roblox', 'nextjs', 'tailwindcss'],
 }
 
-export default (props) => <ArticleLayout meta={meta} {...props} />
+export default (props) => <ProjectLayout meta={meta} {...props} />
 
 > The Bloxbuy marketplace was shut down and is no longer available for users. Unfortunately, this means previewing the platform or accessing any of its features is impossible.
 

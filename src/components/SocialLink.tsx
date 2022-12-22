@@ -1,6 +1,8 @@
 import Link, { LinkProps } from 'next/link'
+import { ReactElement } from 'react'
 
-type SocialLinkProps = { icon: any } & LinkProps
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type SocialLinkProps = { icon: (props: any) => ReactElement } & LinkProps
 
 const SocialLink: React.FC<SocialLinkProps> = ({ icon: Icon, ...props }) => {
   return (

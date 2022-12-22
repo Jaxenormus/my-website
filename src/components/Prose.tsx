@@ -1,5 +1,5 @@
-import { FC, ReactElement } from 'react'
 import clsx from 'clsx'
+import { FC, ReactElement } from 'react'
 
 type ProseProps = {
   children: React.ReactNode
