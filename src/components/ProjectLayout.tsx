@@ -25,7 +25,6 @@ const ProjectLayout: React.FC<ProjectLayoutProps> = ({
     <>
       <Head>
         <title>{`${meta.title} - Caleb`}</title>
-
         <meta name="description" content={meta.description} />
       </Head>
 
