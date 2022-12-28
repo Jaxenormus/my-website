@@ -6,7 +6,7 @@ import { ReactElement, SVGProps } from 'react'
 
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@/components/Icons'
-import portraitImage from '@/images/portrait.jpg'
+import portraitImage from '@/images/portrait.gif'
 
 type SocialLinkProps = {
   className?: string
