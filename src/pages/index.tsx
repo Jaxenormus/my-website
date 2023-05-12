@@ -7,7 +7,8 @@ import ProjectCard from '@/components/ProjectCard'
 import SocialLink from '@/components/SocialLink'
 import BriefcaseIcon from '@/icons/BriefcaseIcon'
 import MailIcon from '@/icons/MailIcon'
-import logoPlanetaria from '@/images/logos/open-shuttle.svg'
+import logoAtlas from '@/images/logos/atlas.png'
+import logoSinuio from '@/images/logos/barnabus.png'
 import logoSyncore from '@/images/logos/syncore.png'
 import { getFeaturedProjects } from '@/lib/getProjects'
 
@@ -105,8 +106,8 @@ type Role = {
   company: string
   title: string
   logo: string | StaticImageData
-  start: string | { label: string; dateTime: number }
-  end: string | { label: string; dateTime: number }
+  start: string | { label: string }
+  end: string | { label: string }
 }
 
 const Experience: React.FC = () => {
@@ -114,12 +115,16 @@ const Experience: React.FC = () => {
     {
       company: 'Sinuio',
       title: 'Founder',
-      logo: logoPlanetaria,
+      logo: logoSinuio,
       start: '2020',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear(),
-      },
+      end: { label: 'Present' },
+    },
+    {
+      company: 'Atlas Rust',
+      title: 'Bot Developer',
+      logo: logoAtlas,
+      start: '2023',
+      end: { label: 'Present' },
     },
     {
       company: 'Syncore LLC',
@@ -160,25 +165,13 @@ const Experience: React.FC = () => {
                   typeof role.end !== 'string' ? role.end.label : role.end
                 }`}
               >
-                <time
-                  dateTime={
-                    typeof role.start === 'string'
-                      ? role.start
-                      : role.start.dateTime.toString()
-                  }
-                >
+                <time>
                   {typeof role.start === 'string'
                     ? role.start
                     : role.start.label}
                 </time>{' '}
                 <span aria-hidden="true">- </span>
-                <time
-                  dateTime={
-                    typeof role.end === 'string'
-                      ? role.end
-                      : role.end.dateTime.toString()
-                  }
-                >
+                <time>
                   {typeof role.end === 'string' ? role.end : role.end.label}
                 </time>
               </dd>
