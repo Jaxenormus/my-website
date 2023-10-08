@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
-import { Container } from '@/components/Container'
-import { navigation } from '@/context'
+import { Container } from '@/src/components/Container'
+import { navigation } from '@/src/context'
 
 function NavLink({ href, children }: any) {
   return (

@@ -1,6 +1,6 @@
 import { FC, ReactElement } from 'react'
 
-import { Container } from '@/components/Container'
+import { Container } from '@/src/components/Container'
 
 type SimpleLayoutProps = {
   title: string

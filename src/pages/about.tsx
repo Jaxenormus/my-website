@@ -4,9 +4,9 @@ import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 import { ReactElement, SVGProps } from 'react'
 
-import { Container } from '@/components/Container'
-import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@/components/Icons'
-import portraitImage from '@/images/portrait.gif'
+import { Container } from '@/src/components/Container'
+import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@/src/components/Icons'
+import portraitImage from '@/public/assets/portrait.gif'
 
 type SocialLinkProps = {
   className?: string

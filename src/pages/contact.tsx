@@ -6,8 +6,8 @@ import {
   TextareaHTMLAttributes,
 } from 'react'
 
-import Button from '@/components/Button'
-import { SimpleLayout } from '@/components/SimpleLayout'
+import Button from '@/src/components/Button'
+import { SimpleLayout } from '@/src/components/SimpleLayout'
 
 const Input = ({
   variant,

@@ -1,8 +1,8 @@
 import { NextSeo } from 'next-seo'
 
-import ProjectCard from '@/components/ProjectCard'
-import { SimpleLayout } from '@/components/SimpleLayout'
-import { getAllProjects } from '@/lib/getProjects'
+import ProjectCard from '@/src/components/ProjectCard'
+import { SimpleLayout } from '@/src/components/SimpleLayout'
+import { getAllProjects } from '@/src/lib/getProjects'
 
 type ArticlesPageProps = { articles: any }
 

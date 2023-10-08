@@ -1,16 +1,16 @@
 import Image, { StaticImageData } from 'next/image'
 
-import Button from '@/components/Button'
-import { Container } from '@/components/Container'
-import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@/components/Icons'
-import ProjectCard from '@/components/ProjectCard'
-import SocialLink from '@/components/SocialLink'
-import BriefcaseIcon from '@/icons/BriefcaseIcon'
-import MailIcon from '@/icons/MailIcon'
-import logoAtlas from '@/images/logos/atlas.png'
-import logoSinuio from '@/images/logos/barnabus.png'
-import logoSyncore from '@/images/logos/syncore.png'
-import { getFeaturedProjects } from '@/lib/getProjects'
+import logoSinuio from '@/public/assets/logos/barnabus.png'
+import logoSyncore from '@/public/assets/logos/syncore.png'
+import logoWhop from '@/public/assets/logos/whop.png'
+import Button from '@/src/components/Button'
+import { Container } from '@/src/components/Container'
+import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@/src/components/Icons'
+import ProjectCard from '@/src/components/ProjectCard'
+import SocialLink from '@/src/components/SocialLink'
+import BriefcaseIcon from '@/src/icons/BriefcaseIcon'
+import MailIcon from '@/src/icons/MailIcon'
+import { getFeaturedProjects } from '@/src/lib/getProjects'
 
 const Contact: React.FC = () => {
   return (
@@ -113,6 +113,13 @@ type Role = {
 const Experience: React.FC = () => {
   const resume: Role[] = [
     {
+      company: 'Whop',
+      title: 'Software Engineer',
+      logo: logoWhop,
+      start: '2023',
+      end: { label: 'Present' },
+    },
+    {
       company: 'Sinuio',
       title: 'Founder',
       logo: logoSinuio,
@@ -120,15 +127,8 @@ const Experience: React.FC = () => {
       end: { label: 'Present' },
     },
     {
-      company: 'Atlas Rust',
-      title: 'Bot Developer',
-      logo: logoAtlas,
-      start: '2023',
-      end: { label: 'Present' },
-    },
-    {
       company: 'Syncore LLC',
-      title: 'Software Developer',
+      title: 'Frontend Developer',
       logo: logoSyncore,
       start: '2021',
       end: '2022',

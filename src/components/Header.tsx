@@ -5,9 +5,9 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Fragment, useEffect, useRef } from 'react'
 
-import { Container } from '@/components/Container'
-import { navigation } from '@/context'
-import avatarImage from '@/images/avatar.jpg'
+import { Container } from '@/src/components/Container'
+import { navigation } from '@/src/context'
+import avatarImage from '@/public/assets/avatar.jpg'
 
 import { ChevronDownIcon, CloseIcon, MoonIcon, SunIcon } from './Icons'
 

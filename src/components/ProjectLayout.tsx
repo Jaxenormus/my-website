@@ -3,8 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import { Container } from '@/components/Container'
-import { Prose } from '@/components/Prose'
+import { Container } from '@/src/components/Container'
+import { Prose } from '@/src/components/Prose'
 
 import { ArrowLeftIcon, LinkIcon } from './Icons'
 

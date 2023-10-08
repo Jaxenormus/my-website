@@ -1,12 +1,12 @@
-import '@/styles/tailwind.css'
+import '@/src/styles/tailwind.css'
 import 'focus-visible'
 
 import Script from 'next/script'
 import { DefaultSeo } from 'next-seo'
 import { useEffect, useRef } from 'react'
 
-import Footer from '@/components/Footer'
-import { Header } from '@/components/Header'
+import Footer from '@/src/components/Footer'
+import { Header } from '@/src/components/Header'
 
 function usePrevious(value: any) {
   const ref = useRef()
