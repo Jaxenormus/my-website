@@ -9,5 +9,5 @@ export default defineConfig({
   site: "https://calebdelbridge.com",
   integrations: [tailwind(), sitemap()],
   output: "server",
-  adapter: vercel({ webAnalytics: { enabled: true, } }),
+  adapter: vercel({ webAnalytics: { enabled: true }, imageService: true }),
 });
