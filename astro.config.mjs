@@ -8,6 +8,6 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   site: "https://calebdelbridge.com",
   integrations: [tailwind(), sitemap()],
-  output: "server",
+  output: "hybrid",
   adapter: vercel({ webAnalytics: { enabled: true }, imageService: true }),
 });
