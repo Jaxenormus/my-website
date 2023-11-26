@@ -1,0 +1,19 @@
+---
+import classnames from "classnames";
+
+interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
+  external?: boolean;
+}
+
+const { class: className, target, external = true, ...props } = Astro.props;
+---
+
+<a
+  class={classnames("text-blue-500 hover:text-blue-600", className)}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
+  referrerpolicy="no-referrer"
+  {...props}
+>
+  <slot />
+</a>

@@ -1,0 +1,111 @@
+---
+import Experience from "../components/Experience.astro";
+import Link from "../components/Link.astro";
+import Project from "../components/Project.astro";
+import Section from "../components/Section.astro";
+import { SEO } from "astro-seo";
+
+const age = new Date().getFullYear() - 2005;
+
+const meta = {
+  title: "caleb delbridge",
+  description: "software engineer, kinda hate bad ux tbh",
+  url: "https://calebdelbridge.com",
+  image: "/og.png",
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO
+      title={meta.title}
+      description={meta.description}
+      canonical={meta.url}
+      openGraph={{
+        basic: {
+          title: meta.title,
+          type: "website",
+          url: meta.url,
+          image: meta.image,
+        },
+        optional: { description: meta.description },
+      }}
+      twitter={{
+        title: meta.title,
+        description: meta.description,
+        image: meta.image,
+        card: "summary",
+        creator: "@jaxenormus",
+        site: meta.url,
+      }}
+    />
+  </head>
+  <body
+    class="max-w-2xl mx-8 sm:mx-auto bg-zinc-900 text-white my-16 md:my-28 lg:my-32 space-y-12 font-mono"
+  >
+    <div class="space-y-5">
+      <h1>caleb delbridge (aka jax)</h1>
+      <p class="text-zinc-400">
+        {age} year old software engineer in brooklyn, ny. former vex robotics
+        builder & driver. currently at <Link href="https://whop.com">whop</Link>
+         helping make everyone an internet entrepreneur.
+      </p>
+    </div>
+    <Section id="projects" title="few things i've worked on">
+      <div class="space-y-5">
+        <Project
+          title="twilid"
+          description="a calendar app built to transform how businesses, creators, and organizations share and manage their events, like google calendar but on steroids with a focus on interactive and shareable event experiences."
+          link="https://new.twilid.com"
+        />
+        <Project
+          title="escrow"
+          description="an automated crypto and roblox limiteds middleman discord bot. built using typescript and the effect library, escrow has been able to faciliate over 1000+ deals helping traders safely and efficently exchange services or items with little to no human interaction."
+        />
+        <Project
+          title="barnabus"
+          description="an advance moderation bot for discord communities. built to entirely automate the process of community moderation while also providing a wide range of other features such as music straming and a leveling system. even tho its no longer online it was verified by discord and used by 100s of communites."
+        />
+      </div>
+    </Section>
+    <Section id="experience" title="my journey and experience">
+      <div class="space-y-5">
+        <Experience
+          company="whop"
+          position="software engineer"
+          start="jul 2023"
+        />
+        <Experience
+          company="syncore llc"
+          position="frontend developer"
+          start="apr 2021"
+          end="jul 2022"
+        />
+        <Experience
+          company="sinuio"
+          position="freelance developer"
+          start="oct 2020"
+          end="jul 2023"
+        />
+      </div>
+    </Section>
+    <Section id="contact" title="find & reach me here">
+      <div class="space-x-2">
+        <Link href="https://twitter.com/jaxenormus">twitter</Link>
+        <Link href="https://www.linkedin.com/in/calebdelbridge/">linkedin</Link>
+        <Link href="https://github.com/jaxenormus">github</Link>
+        <Link href="mailto:me@calebdelbridge.com">email</Link>
+      </div>
+    </Section>
+  </body>
+</html>
