@@ -5,6 +5,10 @@ import Project from "../components/Project.astro";
 import Section from "../components/Section.astro";
 import { SEO } from "astro-seo";
 
+import syncoreImage from "../../public/images/syncore.png";
+import whopImage from "../../public/images/whop.png";
+import sinuioImage from "../../public/images/sinuio.png";
+
 const age = new Date().getFullYear() - 2005;
 
 const meta = {
@@ -53,8 +57,7 @@ const meta = {
   <body
     class="max-w-2xl mx-8 sm:mx-auto bg-zinc-900 text-white my-16 md:my-28 lg:my-32 space-y-12 font-mono"
   >
-    <div class="space-y-5">
-      <h1>caleb delbridge (aka jax)</h1>
+    <Section id="hero" title="caleb delbridge (aka jax)">
       <p class="text-zinc-400">
         <span
           >{age} year old software engineer in brooklyn, ny. former vex robotics
@@ -63,14 +66,40 @@ const meta = {
         <Link href="https://whop.com">whop</Link>
         <span>helping make everyone an internet entrepreneur.</span>
       </p>
-    </div>
-    <Section id="projects" title="few things i've worked on">
+    </Section>
+    <Section id="experience" title="my journey & experience">
       <div class="space-y-5">
-        <Project
-          title="twilid"
-          description="a calendar app built to transform how businesses, creators, and organizations share and manage their events, like google calendar, but on steroids with a focus on interactive and shareable event experiences."
-          link="https://new.twilid.com"
+        <Experience
+          company="whop"
+          image={whopImage}
+          position="software engineer"
+          start="2023"
+          end="current"
         />
+        <Experience
+          company="syncore llc"
+          image={syncoreImage}
+          position="frontend developer"
+          start="2021"
+          end="2022"
+        />
+        <Experience
+          company="sinuio"
+          image={sinuioImage}
+          position="freelance developer"
+          start="2020"
+          end="2023"
+        />
+      </div>
+    </Section>
+    <Section id="projects" title="few projects and things of that nature">
+      <div class="space-y-5">
+        <Link href="https://new.twilid.com">
+          <Project
+            title="twilid"
+            description="a calendar app built to transform how businesses, creators, and organizations share and manage their events, like google calendar, but on steroids with a focus on interactive and shareable event experiences."
+          />
+        </Link>
         <Project
           title="escrow"
           description="an automated crypto and roblox limiteds middleman discord bot. built using typescript and the effect library, escrow has been able to facilitate over 1000+ deals helping traders safely and efficiently exchange services or items with little to no human interaction."
@@ -78,27 +107,6 @@ const meta = {
         <Project
           title="barnabus"
           description="an advance moderation bot for discord communities. built to entirely automate the process of community moderation while also providing a wide range of other features such as music streaming and a leveling system. even though it's no longer online, it was verified by discord and used by 100s of communities."
-        />
-      </div>
-    </Section>
-    <Section id="experience" title="my journey and experience">
-      <div class="space-y-5">
-        <Experience
-          company="whop"
-          position="software engineer"
-          start="jul 2023"
-        />
-        <Experience
-          company="syncore llc"
-          position="frontend developer"
-          start="apr 2021"
-          end="jul 2022"
-        />
-        <Experience
-          company="sinuio"
-          position="freelance developer"
-          start="oct 2020"
-          end="jul 2023"
         />
       </div>
     </Section>

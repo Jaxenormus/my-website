@@ -1,23 +1,13 @@
 ---
-import Link from "./Link.astro";
 interface Props {
   title: string;
   description: string;
-  link?: string;
 }
 
-const { title, description, link } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <article class="space-y-1">
-  {
-    link ? (
-      <Link href={link}>
-        <h3>{title}</h3>
-      </Link>
-    ) : (
-      <h3>{title}</h3>
-    )
-  }
+  <h3>{title}</h3>
   <p class="text-zinc-400">{description}</p>
 </article>
