@@ -1,16 +1,18 @@
 ---
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
+import { ImagePopover } from "./ImagePopover";
 
 interface Props {
   image: ImageMetadata;
+  siteImage: ImageMetadata;
   company: string;
   position: string;
   start: string;
   end: string;
 }
 
-const { company, position, start, end, image } = Astro.props;
+const { company, position, start, end, image, siteImage } = Astro.props;
 ---
 
 <div class="flex flex-row items-center gap-4 w-full">
@@ -19,11 +21,15 @@ const { company, position, start, end, image } = Astro.props;
     alt={company}
     class="hidden min-[400px]:block w-10 h-10 bg-zinc-400 rounded-full"
   />
-  <div class="space-y-1 w-full">
-    <h3>{company}</h3>
-    <p class="flex flex-row justify-between items-start text-sm text-zinc-400">
-      <span>{position}</span>
-      <span>{start} - {end}</span>
-    </p>
-  </div>
+  <ImagePopover image={siteImage} client:load>
+    <div class="space-y-1 w-full">
+      <h3>{company}</h3>
+      <p
+        class="flex flex-row justify-between items-start text-sm text-zinc-400"
+      >
+        <span>{position}</span>
+        <span>{start} - {end}</span>
+      </p>
+    </div>
+  </ImagePopover>
 </div>

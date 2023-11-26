@@ -7,7 +7,10 @@ import { SEO } from "astro-seo";
 
 import syncoreImage from "../../public/images/syncore.png";
 import whopImage from "../../public/images/whop.png";
-import sinuioImage from "../../public/images/sinuio.png";
+import syncoreSiteImage from "../../public/images/syncore-site.png";
+import whopSiteImage from "../../public/images/whop-site.png";
+import selfEmployedImage from "../../public/images/self-employed.png";
+import selfEmployedSiteImage from "../../public/images/self-employed-site.png";
 
 const age = new Date().getFullYear() - 2005;
 
@@ -59,12 +62,13 @@ const meta = {
   >
     <Section id="hero" title="caleb delbridge (aka jax)">
       <p class="text-zinc-400">
-        <span
-          >{age} year old software engineer in brooklyn, ny. former vex robotics
-          programmer, builder, and driver for 8 years. currently at</span
-        >
+        <span>
+          {age} year old software engineer in brooklyn, ny. ex vex robotics
+          programmer, builder, and driver for 8 years. freelance developer on
+          the side. currently at
+        </span>
         <Link href="https://whop.com">whop</Link>
-        <span>helping make everyone an internet entrepreneur.</span>
+        <span>helping reinvent the internet economy.</span>
       </p>
     </Section>
     <Section id="experience" title="my journey & experience">
@@ -72,32 +76,41 @@ const meta = {
         <Experience
           company="whop"
           image={whopImage}
+          siteImage={whopSiteImage}
           position="software engineer"
           start="2023"
           end="current"
         />
         <Experience
+          company="self employed"
+          image={selfEmployedImage}
+          siteImage={selfEmployedSiteImage}
+          position="freelance developer"
+          start="2020"
+          end="current"
+        />
+        <Experience
           company="syncore llc"
           image={syncoreImage}
+          siteImage={syncoreSiteImage}
           position="frontend developer"
           start="2021"
           end="2022"
         />
-        <Experience
-          company="sinuio"
-          image={sinuioImage}
-          position="freelance developer"
-          start="2020"
-          end="2023"
-        />
       </div>
     </Section>
     <Section id="projects" title="few projects and things of that nature">
-      <div class="space-y-5">
+      <div class="flex flex-col gap-5">
         <Link href="https://new.twilid.com">
           <Project
             title="twilid"
             description="a calendar app built to transform how businesses, creators, and organizations share and manage their events, like google calendar, but on steroids with a focus on interactive and shareable event experiences."
+          />
+        </Link>
+        <Link href="https://www.kinfolq.com/">
+          <Project
+            title="kinfolq"
+            description="a landing page for the 2nd annual kinfolq conference in nyc. built using nextjs and tailwind, the site was able to be spun up in a couple days to provide all the information needed for attendees."
           />
         </Link>
         <Project
