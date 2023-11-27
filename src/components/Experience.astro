@@ -23,12 +23,12 @@ const { company, position, start, end, image, siteImage } = Astro.props;
       class="hidden min-[400px]:block w-10 h-10 bg-zinc-400 rounded-full"
     />
     <div class="space-y-1 w-full">
-      <div class="flex flex-row justify-between items-start">
-        <h3>{company}</h3>
-        <span class="text-sm text-zinc-400">{start} - {end}</span>
-      </div>
-      <p class="text-sm text-zinc-400">
+      <h3 class="text-sm lg:text-base">{company}</h3>
+      <p
+        class="flex flex-row justify-between items-start text-sm text-zinc-400"
+      >
         <span>{position}</span>
+        <span>{start} - {end}</span>
       </p>
     </div>
   </div>
