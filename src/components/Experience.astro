@@ -15,21 +15,21 @@ interface Props {
 const { company, position, start, end, image, siteImage } = Astro.props;
 ---
 
-<div class="flex flex-row items-center gap-4 w-full">
-  <Image
-    src={image}
-    alt={company}
-    class="hidden min-[400px]:block w-10 h-10 bg-zinc-400 rounded-full"
-  />
-  <ImagePopover image={siteImage} client:load>
+<ImagePopover image={siteImage} client:load>
+  <div class="flex flex-row items-center gap-4 w-full">
+    <Image
+      src={image}
+      alt={company}
+      class="hidden min-[400px]:block w-10 h-10 bg-zinc-400 rounded-full"
+    />
     <div class="space-y-1 w-full">
-      <h3>{company}</h3>
-      <p
-        class="flex flex-row justify-between items-start text-sm text-zinc-400"
-      >
+      <div class="flex flex-row justify-between items-start">
+        <h3>{company}</h3>
+        <span class="text-sm text-zinc-400">{start} - {end}</span>
+      </div>
+      <p class="text-sm text-zinc-400">
         <span>{position}</span>
-        <span>{start} - {end}</span>
       </p>
     </div>
-  </ImagePopover>
-</div>
+  </div>
+</ImagePopover>
