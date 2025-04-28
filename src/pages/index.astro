@@ -12,11 +12,14 @@ import whopSiteImage from "../../public/images/whop-site.png";
 import selfEmployedImage from "../../public/images/self-employed.png";
 import selfEmployedSiteImage from "../../public/images/self-employed-site.png";
 
-const age = new Date().getFullYear() - 2005;
+const age = Math.floor(
+  (Date.now() - new Date(2005, 6, 16).getTime()) /
+    (1000 * 60 * 60 * 24 * 365.25)
+);
 
 const meta = {
   title: "caleb delbridge",
-  description: "software engineer, kinda hate bad ux tbh",
+  description: "software engineer @whopio",
   url: "https://calebdelbridge.com",
   image: "/og.png",
 };
@@ -66,9 +69,9 @@ const meta = {
     <Section id="hero" title="caleb delbridge (aka jax)">
       <p class="text-zinc-400 text-sm lg:text-base">
         <span>
-          {age} year old software engineer in brooklyn, ny. ex vex robotics
-          programmer, builder, and driver for 8 years. freelance developer on
-          the side. currently at
+          {age} year old software engineer in brooklyn, ny. ex vex robotics programmer,
+          builder, and driver for 8 years. freelance developer on the side. currently
+          at
         </span>
         <Link href="https://whop.com">whop</Link>
         <span>helping reinvent the internet economy.</span>
@@ -128,10 +131,10 @@ const meta = {
     </Section>
     <Section id="contact" title="find & reach me here">
       <div class="space-x-2">
-        <Link href="https://twitter.com/jaxenormus">twitter</Link>
+        <Link href="https://x.com/jaxenormus">x</Link>
         <Link href="https://www.linkedin.com/in/calebdelbridge/">linkedin</Link>
         <Link href="https://github.com/jaxenormus">github</Link>
-        <Link href="mailto:me@calebdelbridge.com">email</Link>
+        <Link href="mailto:caleb@whop.com.com">email</Link>
       </div>
     </Section>
   </body>
