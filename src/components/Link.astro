@@ -1,6 +1,6 @@
 ---
 interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
-  external?: boolean;
+	external?: boolean;
 }
 
 const { class: className, target, external = true, ...props } = Astro.props;
