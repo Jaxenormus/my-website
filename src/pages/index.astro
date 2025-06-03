@@ -1,42 +1,38 @@
 ---
-import Experience from "../components/Experience.astro";
-import Link from "../components/Link.astro";
-import Project from "../components/Project.astro";
-import Section from "../components/Section.astro";
+import "../styles/global.css";
+
+import { Font } from "astro:assets";
+
+import Experience from "@/components/Experience.astro";
+import Link from "@/components/Link.astro";
+import Project from "@/components/Project.astro";
+import Section from "@/components/Section.astro";
 import { SEO } from "astro-seo";
 
-import syncoreImage from "../../public/images/syncore.png";
-import whopImage from "../../public/images/whop.png";
-import syncoreSiteImage from "../../public/images/syncore-site.png";
-import whopSiteImage from "../../public/images/whop-site.png";
-import selfEmployedImage from "../../public/images/self-employed.png";
-import selfEmployedSiteImage from "../../public/images/self-employed-site.png";
+import syncoreImage from "@/assets/images/syncore.png";
+import whopImage from "@/assets/images/whop.png";
+import selfEmployedImage from "@/assets/images/self-employed.png";
 
 const age = Math.floor(
-  (Date.now() - new Date(2005, 6, 16).getTime()) /
-    (1000 * 60 * 60 * 24 * 365.25)
+	(Date.now() - new Date(2005, 6, 16).getTime()) /
+		(1000 * 60 * 60 * 24 * 365.25),
 );
 
 const meta = {
-  title: "caleb delbridge",
-  description: "software engineer @whopio",
-  url: "https://calebdelbridge.com",
-  image: "/og.png",
+	title: "caleb delbridge",
+	description: "brooklyn based product engineer",
+	url: "https://calebdelbridge.com",
+	image: "/og.png",
 };
 ---
 
 <html lang="en" class="bg-[#161618] text-white font-mono">
   <head>
     <meta charset="utf-8" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap"
-      rel="stylesheet"
-    />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <Font cssVariable="--font-mono" preload />
     <SEO
       title={meta.title}
       description={meta.description}
@@ -54,7 +50,7 @@ const meta = {
         title: meta.title,
         description: meta.description,
         image: meta.image,
-        card: "summary",
+        card: "summary_large_image",
         creator: "@jaxenormus",
         site: meta.url,
       }}
@@ -65,16 +61,12 @@ const meta = {
       }
     </style>
   </head>
-  <body class="max-w-2xl mx-5 md:mx-auto my-8 md:my-32 space-y-12">
+  <body class="max-w-2xl mx-5 md:mx-auto my-8 md:my-32 space-y-8">
     <Section id="hero" title="caleb delbridge (aka jax)">
-      <p class="text-zinc-400 text-sm lg:text-base">
-        <span>
-          {age} year old software engineer in brooklyn, ny. ex vex robotics programmer,
-          builder, and driver for 8 years. freelance developer on the side. currently
-          at
-        </span>
-        <Link href="https://whop.com">whop</Link>
-        <span>helping reinvent the internet economy.</span>
+      <p class="text-zinc-400 text-sm lg:text-base space-y-1 flex flex-col">
+        <span>{age} y/o product engineer 🏗️ based in brooklyn.</span>
+        <span>8 years building, coding, and driving in vex robotics.</span>
+        <span>now designing systems that do more than just run.</span>
       </p>
     </Section>
     <Section id="experience" title="my journey & experience">
@@ -82,23 +74,20 @@ const meta = {
         <Experience
           company="whop"
           image={whopImage}
-          siteImage={whopSiteImage}
           position="software engineer"
           start="2023"
-          end="current"
+          end="2025"
         />
         <Experience
           company="self employed"
           image={selfEmployedImage}
-          siteImage={selfEmployedSiteImage}
           position="freelance developer"
           start="2020"
-          end="current"
+          end="2023"
         />
         <Experience
           company="syncore llc"
           image={syncoreImage}
-          siteImage={syncoreSiteImage}
           position="frontend developer"
           start="2021"
           end="2022"
@@ -113,12 +102,12 @@ const meta = {
             description="a calendar app built to transform how businesses, creators, and organizations share and manage their events, like google calendar, but on steroids with a focus on interactive and shareable event experiences."
           />
         </Link>
-        <Link href="https://www.kinfolq.com/">
+        <!-- <Link href="https://www.kinfolq.com/">
           <Project
             title="kinfolq"
             description="a landing page for the 2nd annual kinfolq conference in nyc. built using nextjs and tailwind, the site was able to be spun up in a couple days to provide all the information needed for attendees."
           />
-        </Link>
+        </Link> -->
         <Project
           title="escrow"
           description="an automated crypto and roblox limiteds middleman discord bot. built using typescript and the effect library, escrow has been able to facilitate over 1000+ deals helping traders safely and efficiently exchange services or items with little to no human interaction."
