@@ -55,76 +55,69 @@ const meta = {
         site: meta.url,
       }}
     />
-    <style>
-      * {
-        color-scheme: dark;
-      }
-    </style>
   </head>
   <body class="max-w-2xl mx-5 md:mx-auto my-8 md:my-32 space-y-8">
-    <Section id="hero" title="caleb delbridge (aka jax)">
-      <p class="text-zinc-400 text-sm lg:text-base space-y-1 flex flex-col">
-        <span>{age} y/o product engineer 🏗️ based in brooklyn.</span>
-        <span>8 years building, coding, and driving in vex robotics.</span>
-        <span>now designing systems that do more than just run.</span>
-      </p>
-    </Section>
-    <Section id="experience" title="my journey & experience">
-      <div class="flex flex-col gap-5">
-        <Experience
-          company="whop"
-          image={whopImage}
-          position="software engineer"
-          start="2023"
-          end="2025"
-        />
-        <Experience
-          company="self employed"
-          image={selfEmployedImage}
-          position="freelance developer"
-          start="2020"
-          end="2023"
-        />
-        <Experience
-          company="syncore llc"
-          image={syncoreImage}
-          position="frontend developer"
-          start="2021"
-          end="2022"
-        />
-      </div>
-    </Section>
-    <Section id="projects" title="few projects and things of that nature">
-      <div class="flex flex-col gap-5">
-        <Link href="https://new.twilid.com">
-          <Project
-            title="twilid"
-            description="a calendar app built to transform how businesses, creators, and organizations share and manage their events, like google calendar, but on steroids with a focus on interactive and shareable event experiences."
+    <main>
+      <Section id="hero" title="caleb delbridge (aka bobvakeb)">
+        <p class="text-zinc-400 text-sm lg:text-base space-y-1 flex flex-col">
+          <span>{age} y/o product engineer 🏗️ based in brooklyn.</span>
+          <span>8 years building, coding, and driving in vex robotics.</span>
+          <span>now designing systems that do more than just run.</span>
+        </p>
+      </Section>
+      <Section id="experience" title="my journey & experience">
+        <div class="flex flex-col gap-5">
+          <Experience
+            company="whop"
+            image={whopImage}
+            position="software engineer"
+            start="2023"
+            end="2025"
           />
-        </Link>
-        <!-- <Link href="https://www.kinfolq.com/">
-          <Project
-            title="kinfolq"
-            description="a landing page for the 2nd annual kinfolq conference in nyc. built using nextjs and tailwind, the site was able to be spun up in a couple days to provide all the information needed for attendees."
+          <Experience
+            company="self employed"
+            image={selfEmployedImage}
+            position="freelance developer"
+            start="2020"
+            end="2023"
           />
-        </Link> -->
-        <Project
-          title="escrow"
-          description="an automated crypto and roblox limiteds middleman discord bot. built using typescript and the effect library, escrow has been able to facilitate over 1000+ deals helping traders safely and efficiently exchange services or items with little to no human interaction."
-        />
-        <Project
-          title="barnabus"
-          description="an advance moderation bot for discord communities. built to entirely automate the process of community moderation while also providing a wide range of other features such as music streaming and a leveling system. even though it's no longer online, it was verified by discord and used by 100s of communities."
-        />
-      </div>
-    </Section>
-    <Section id="contact" title="find & reach me here">
-      <div class="space-x-2">
-        <Link href="https://x.com/jaxenormus">x</Link>
-        <Link href="https://www.linkedin.com/in/calebdelbridge/">linkedin</Link>
-        <Link href="https://github.com/jaxenormus">github</Link>
-        <Link href="mailto:caleb@whop.com.com">email</Link>
-      </div>
-    </Section>
+          <Experience
+            company="syncore llc"
+            image={syncoreImage}
+            position="frontend developer"
+            start="2021"
+            end="2022"
+          />
+        </div>
+      </Section>
+      <Section id="projects" title="some projects and things of that nature">
+        <div class="flex flex-col gap-5">
+          <Link href="https://new.twilid.com">
+            <Project
+              title="twilid"
+              description="a calendar app built to transform how businesses, creators, and organizations share and manage their events, like google calendar, but on steroids with a focus on interactive and shareable event experiences."
+            />
+          </Link>
+          <Project
+            title="escrow"
+            description="an automated crypto and roblox limiteds middleman discord bot. built using typescript and the effect library, escrow has been able to facilitate over 1000+ deals helping traders safely and efficiently exchange services or items with little to no human interaction."
+          />
+          <Project
+            title="barnabus"
+            description="an advance moderation bot for discord communities. built to entirely automate the process of community moderation while also providing a wide range of other features such as music streaming and a leveling system. even though it's no longer online, it was verified by discord and used by 100s of communities."
+          />
+        </div>
+      </Section>
+      <Section id="contact" title="find & reach me here">
+        <div class="space-x-2">
+          <Link href="https://x.com/jaxenormus">x</Link>
+          <Link href="https://www.linkedin.com/in/calebdelbridge/"
+            >linkedin</Link
+          >
+          <Link href="https://github.com/jaxenormus">github</Link>
+          <Link href="mailto:me@calebdelbridge.com">email</Link>
+        </div>
+      </Section>
+    </main>
   </body>
 </html>
