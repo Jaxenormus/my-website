@@ -17,7 +17,7 @@ const { company, position, start, end, image } = Astro.props;
   <Image
     src={image}
     alt={company}
-    class="hidden min-[400px]:block w-10 h-10 bg-zinc-400 rounded-full"
+    class="hidden min-[400px]:block w-10 h-10 bg-zinc-400 rounded-full object-cover object-center"
     loading="eager"
   />
   <div class="space-y-1 w-full">
