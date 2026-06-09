@@ -17,6 +17,8 @@
 		"@tailwindcss/vite": "^4.1.8",
 		"astro": "5.12.8",
 		"astro-seo": "0.8.4",
+		"embla-carousel": "^8.6.0",
+		"embla-carousel-wheel-gestures": "^8.1.0",
 		"react": "19.1.0",
 		"react-dom": "19.1.0",
 		"tailwindcss": "^4.1.8",

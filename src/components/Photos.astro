@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  images: ImageMetadata[];
+}
+
+const { images } = Astro.props;
+const rotations = ["rotate-2", "-rotate-2", "rotate-2", "rotate-2", "-rotate-2"];
+---
+
+<div class="embla group relative left-1/2 right-1/2 -mx-[50vw] w-screen cursor-grab overflow-hidden py-4 select-none">
+  <div class="embla__container -ml-5 flex items-center sm:-ml-8">
+    {
+      images.map((image, i) => (
+        <div
+          class="embla__slide ml-5 h-32 flex-none sm:ml-8 sm:h-64"
+          style={`aspect-ratio: ${image.width} / ${image.height}`}
+        >
+          <div
+            class:list={[
+              "relative h-full w-full overflow-hidden rounded-xl bg-zinc-800 transition duration-300 ease-out hover:z-10 hover:rotate-0 hover:scale-105 hover:shadow-2xl hover:shadow-black/40 sm:rounded-2xl",
+              rotations[i % rotations.length],
+            ]}
+          >
+            <Image
+              src={image}
+              alt=""
+              sizes="(min-width: 640px) 40rem, 24rem"
+              draggable={false}
+              class="pointer-events-none absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .embla.is-grabbing {
+    cursor: grabbing;
+  }
+</style>
+
+<script>
+  import { initScrollers } from "@/scripts/photo-scroller";
+  initScrollers();
+</script>
